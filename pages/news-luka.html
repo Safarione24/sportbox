@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лука Дончич — трипл-дабл против Денвера | SportBox</title>
+    <link rel="stylesheet" href="./css/main-news.css">
+    <link rel="stylesheet" href="./css/types-of-sports.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/ico/pogo.png">
+    <style>
+        /* Дополнительные стили для страницы новости */
+        .news-detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #FFB347;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .detail-header {
+            margin-bottom: 2rem;
+        }
+        
+        .detail-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-title {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-meta {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+        
+        .detail-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cbd5e6;
+            margin-bottom: 2rem;
+        }
+        
+        /* Блок лайков */
+        .like-section {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .like-btn, .dislike-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .like-btn:hover { background: #4ade80; color: #1a2a3a; }
+        .dislike-btn:hover { background: #ef4444; color: white; }
+        .like-btn.active { background: #4ade80; color: #1a2a3a; }
+        .dislike-btn.active { background: #ef4444; color: white; }
+        
+        /* Комментарии */
+        .comments-section {
+            margin-bottom: 2rem;
+        }
+        
+        .comments-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .comment-input {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 16px;
+            padding: 1rem;
+            color: white;
+            font-family: inherit;
+            resize: vertical;
+        }
+        
+        .comment-input:focus {
+            outline: none;
+            border-color: #FFB347;
+        }
+        
+        .submit-comment {
+            background: #FFB347;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            width: fit-content;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        
+        .submit-comment:hover {
+            background: #FF8C00;
+            transform: scale(1.02);
+        }
+        
+        .comments-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .comment-item {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 16px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #FFB347;
+            margin-bottom: 0.3rem;
+        }
+        
+        .comment-text {
+            color: #cbd5e6;
+            line-height: 1.4;
+        }
+        
+        .comment-date {
+            font-size: 0.7rem;
+            color: #6b7280;
+            margin-top: 0.3rem;
+        }
+        
+        /* Другие новости */
+        .other-news {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .other-news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .other-news-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1rem;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        
+        .other-news-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .other-news-img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .other-news-title {
+            font-weight: 600;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 700px) {
+            .detail-img { height: 200px; }
+            .detail-title { font-size: 1.5rem; }
+            .detail-content { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-menu">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="./img/ico/logo.png" alt="SPORTBOX"></a></div>
+            <div class="nav-links">
+                <a href="football.html">⚽ Футбол</a>
+                <a href="hockey.html">🏒 Хоккей</a>
+                <a href="basketball.html">🏀 Баскетбол</a>
+                <a href="tennis.html">⚾ Теннис</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Ещё <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="volleyball.html">🏐 Волейбол</a>
+                        <a href="boxing.html">🥊 Бокс / MMA</a>
+                        <a href="f1.html">🏎️ Формула-1</a>
+                        <a href="biathlon.html">🎯 Биатлон</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="news-detail-container">
+        <a href="main-news.html" class="back-link">← Назад к новостям</a>
+        
+        <div class="detail-header">
+            <img class="detail-img" id="detail-img" src="" alt="">
+            <span class="sport-tag sport-basketball" id="detail-tag"></span>
+            <h1 class="detail-title" id="detail-title"></h1>
+            <div class="detail-meta" id="detail-meta"></div>
+        </div>
+        
+        <div class="detail-content" id="detail-content"></div>
+        
+        <!-- Блок лайков -->
+        <div class="like-section">
+            <button class="like-btn" id="like-btn">👍 <span id="like-count">0</span></button>
+            <button class="dislike-btn" id="dislike-btn">👎 <span id="dislike-count">0</span></button>
+        </div>
+        
+        <!-- Комментарии -->
+        <div class="comments-section">
+            <h3 class="comments-title">💬 Комментарии (<span id="comments-count">0</span>)</h3>
+            <div class="comment-form">
+                <input type="text" id="comment-name" class="comment-input" placeholder="Ваше имя" style="max-width: 250px;">
+                <textarea id="comment-text" class="comment-input" rows="3" placeholder="Напишите комментарий..."></textarea>
+                <button class="submit-comment" id="submit-comment">Отправить</button>
+            </div>
+            <div class="comments-list" id="comments-list"></div>
+        </div>
+        
+        <!-- Другие новости -->
+        <div class="other-news">
+            <h3 class="comments-title">📰 Другие новости</h3>
+            <div class="other-news-grid" id="other-news-grid"></div>
+        </div>
+    </div>
+
+    <script>
+        // Данные новости (ID из URL)
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = urlParams.get('id') || '1';
+        
+        // Данные новости (копия из main-news.html)
+        const currentNews = {
+            1: {
+                title: "Лука Дончич выдал трипл-дабл в победе над «Денвером»",
+                tag: "Баскетбол / НБА",
+                tagClass: "sport-basketball",
+                date: "2 часа назад • ESPN",
+                fullText: "<p>Словенский суперстар Лука Дончич продолжил свою фантастическую игру в сезоне. В матче против «Денвер Наггетс» он набрал 34 очка, 11 подборов и 12 передач, оформив 15-й трипл-дабл в сезоне.</p><p>«Лейкерс» одержали важную победу со счётом 117:110, которая укрепила их позиции в топ-3 Западной конференции. Дончич также установил личный рекорд по трёхочковым в этом сезоне, реализовав 6 из 9 попыток.</p><h3>Реакция после матча</h3><p>«Я просто выхожу и играю в свою игру. Мои партнёры доверяют мне, и я стараюсь оправдывать это доверие. Сегодня мяч летел хорошо, но главное — это победа команды», — заявил Дончич на послематчевой пресс-конференции.</p><p>Тренер «Лейкерс» похвалил словенца: «Лука — особенный игрок. Когда он в таком ритме, остановить его практически невозможно. Его видение площадки и способность забивать с любой дистанции делают нас опасными для любого соперника».</p>",
+                img: "./img/news-photo/luka.jpg"
+            }
+        };
+        
+        // Другие новости (для блока «Другие новости»)
+        const otherNews = [
+            { title: "«Бостон» оформил 10-ю победу подряд", img: "./img/news-photo/tatum.webp", link: "news-detail.html?id=2" },
+            { title: "«Оклахома-Сити» обменяла будущий пик", img: "./img/news-photo/okc.jpg", link: "news-detail.html?id=3" },
+            { title: "«Реал» вырвал победу у «Баварии»", img: "./img/news-photo/real-vs-bavaria.jpg", link: "news-detail.html?id=4" },
+            { title: "Овечкин оформил дубль", img: "./img/news-photo/ovechkin.jpg", link: "news-detail.html?id=7" }
+        ];
+        
+        // Загрузка новости
+        const news = currentNews[newsId];
+        if (news) {
+            document.getElementById('detail-img').src = news.img;
+            document.getElementById('detail-tag').textContent = news.tag;
+            document.getElementById('detail-tag').className = `sport-tag ${news.tagClass}`;
+            document.getElementById('detail-title').textContent = news.title;
+            document.getElementById('detail-meta').textContent = news.date;
+            document.getElementById('detail-content').innerHTML = news.fullText;
+        }
+        
+        // Лайки/дизлайки (localStorage)
+        let likes = localStorage.getItem(`news_${newsId}_likes`) ? parseInt(localStorage.getItem(`news_${newsId}_likes`)) : 0;
+        let dislikes = localStorage.getItem(`news_${newsId}_dislikes`) ? parseInt(localStorage.getItem(`news_${newsId}_dislikes`)) : 0;
+        let userVote = localStorage.getItem(`news_${newsId}_user_vote`) || null;
+        
+        function updateLikeUI() {
+            document.getElementById('like-count').textContent = likes;
+            document.getElementById('dislike-count').textContent = dislikes;
+            const likeBtn = document.getElementById('like-btn');
+            const dislikeBtn = document.getElementById('dislike-btn');
+            if (userVote === 'like') {
+                likeBtn.classList.add('active');
+                dislikeBtn.classList.remove('active');
+            } else if (userVote === 'dislike') {
+                dislikeBtn.classList.add('active');
+                likeBtn.classList.remove('active');
+            } else {
+                likeBtn.classList.remove('active');
+                dislikeBtn.classList.remove('active');
+            }
+        }
+        
+        document.getElementById('like-btn').addEventListener('click', () => {
+            if (userVote === 'like') {
+                likes--;
+                userVote = null;
+            } else {
+                if (userVote === 'dislike') dislikes--;
+                likes++;
+                userVote = 'like';
+            }
+            localStorage.setItem(`news_${newsId}_likes`, likes);
+            localStorage.setItem(`news_${newsId}_dislikes`, dislikes);
+            localStorage.setItem(`news_${newsId}_user_vote`, userVote);
+            updateLikeUI();
+        });
+        
+        document.getElementById('dislike-btn').addEventListener('click', () => {
+            if (userVote === 'dislike') {
+                dislikes--;
+                userVote = null;
+            } else {
+                if (userVote === 'like') likes--;
+                dislikes++;
+                userVote = 'dislike';
+            }
+            localStorage.setItem(`news_${newsId}_likes`, likes);
+            localStorage.setItem(`news_${newsId}_dislikes`, dislikes);
+            localStorage.setItem(`news_${newsId}_user_vote`, userVote);
+            updateLikeUI();
+        });
+        
+        updateLikeUI();
+        
+        // Комментарии
+        let comments = JSON.parse(localStorage.getItem(`news_${newsId}_comments`)) || [];
+        
+        function renderComments() {
+            const commentsList = document.getElementById('comments-list');
+            document.getElementById('comments-count').textContent = comments.length;
+            if (comments.length === 0) {
+                commentsList.innerHTML = '<div style="color: #6b7280; text-align: center; padding: 1rem;">Нет комментариев. Будьте первым!</div>';
+                return;
+            }
+            commentsList.innerHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <div class="comment-author">${escapeHtml(comment.name)}</div>
+                    <div class="comment-text">${escapeHtml(comment.text)}</div>
+                    <div class="comment-date">${comment.date}</div>
+                </div>
+            `).join('');
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        document.getElementById('submit-comment').addEventListener('click', () => {
+            const nameInput = document.getElementById('comment-name');
+            const textInput = document.getElementById('comment-text');
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            if (!name || !text) {
+                alert('Введите имя и текст комментария');
+                return;
+            }
+            comments.unshift({
+                name: name,
+                text: text,
+                date: new Date().toLocaleString('ru-RU')
+            });
+            localStorage.setItem(`news_${newsId}_comments`, JSON.stringify(comments));
+            renderComments();
+            nameInput.value = '';
+            textInput.value = '';
+        });
+        
+        renderComments();
+        
+        // Другие новости
+        const otherGrid = document.getElementById('other-news-grid');
+        otherGrid.innerHTML = otherNews.map(item => `
+            <a href="${item.link}" class="other-news-card">
+                <img src="${item.img}" alt="" class="other-news-img">
+                <div class="other-news-title">${item.title}</div>
+            </a>
+        `).join('');
+    </script>
+</body>
+</html>

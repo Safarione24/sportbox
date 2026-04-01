@@ -1,0 +1,497 @@
+/* ========== sport.css — общий стиль для всех страниц видов спорта ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0f1e;
+    color: #eef2ff;
+}
+
+/* ========== НАВИГАЦИЯ ========== */
+.nav-menu {
+    background: linear-gradient(180deg, #1e3a5f 0%, #0f1e33 100%); 
+       backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 180, 71, 0.3);
+    padding: 0.8rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo a {
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-decoration: none;
+    background: linear-gradient(135deg, #FFB347, #FF8C00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    border-bottom: 2px solid transparent;
+    padding: 0.4rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #FFB347;
+    border-bottom-color: #FFB347;
+}
+
+/* Выпадающее меню */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.4rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.dropbtn:hover {
+    color: #FFB347;
+    border-bottom-color: #FFB347;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 200px;
+    background: #0f1e33;
+    border-radius: 12px;
+    padding: 0.6rem 0;
+    margin-top: 0.5rem;
+    border: 1px solid #2a4a6f;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.7rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 107, 53, 0.2);
+    color: #ff6b35;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+.page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.sport-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(255, 193, 7, 0.4);
+    padding-bottom: 1rem;
+}
+
+.sport-header h1 {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #FFB347, #FF8C00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ========== КАРТОЧКИ ========== */
+.section-card {
+    background: rgba(18, 25, 45, 0.7);
+    border-radius: 24px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 1.8rem;
+    border: 1px solid rgba(255, 180, 71, 0.2);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    border-left: 4px solid #FFB347;
+    padding-left: 0.8rem;
+}
+
+/* Новости */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.news-item {
+    display: flex;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.news-item:hover {
+    background: rgba(25, 35, 60, 0.7);
+    transform: translateX(4px);
+}
+
+.news-img {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background: #1e2a3a;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 0.6rem 0.8rem 0.6rem 0;
+}
+
+.news-title {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.news-meta {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    margin-bottom: 0.25rem;
+}
+
+.news-desc {
+    font-size: 0.85rem;
+    color: #cbd5e6;
+}
+
+/* Результаты */
+.results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 0.6rem 1rem;
+    border-radius: 40px;
+}
+
+.team-name {
+    font-weight: 500;
+    width: 35%;
+}
+
+.score {
+    font-weight: 800;
+    background: #FFB34720;
+    padding: 2px 12px;
+    border-radius: 30px;
+}
+
+/* Таблицы / Конференции */
+.conferences {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.conf {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 0.8rem;
+}
+
+.conf h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #FFB347;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 0.4rem 0.3rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.team-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    background: #1e2a3a;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Лиги для футбола, волейбола и т.д. */
+.leagues {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.league {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 0.8rem;
+}
+
+.league h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #FFB347;
+}
+
+/* Рейтинги для тенниса, бокса */
+.rankings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.rank-list {
+    flex: 1;
+    min-width: 240px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 0.8rem;
+}
+
+.rank-list h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #FFB347;
+}
+
+.rank-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.rank-table th,
+.rank-table td {
+    padding: 0.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.player-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1e2a3a;
+}
+
+/* Подвал */
+.footer-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    color: #5f6c84;
+}
+
+/* ========== ЦВЕТОВЫЕ ТЕМЫ ========== */
+/* Баскетбол — оранжевый */
+body.basketball .sport-header h1 { background: linear-gradient(135deg, #FFB347, #FF8C00); -webkit-background-clip: text; background-clip: text; }
+body.basketball .section-title { border-left-color: #FFB347; }
+body.basketball .score { background: #FFB34720; color: #FFB347; }
+body.basketball .conf h3, body.basketball .league h3, body.basketball .rank-list h3 { color: #FFB347; }
+body.basketball .nav-links a:hover, body.basketball .nav-links a.active { color: #FFB347; border-bottom-color: #FFB347; }
+body.basketball .dropbtn:hover { color: #FFB347; border-bottom-color: #FFB347; }
+body.basketball .dropdown-menu a:hover { background: rgba(255, 180, 71, 0.2); color: #FFB347; }
+
+/* Футбол — зелёный */
+body.football .sport-header h1 { background: linear-gradient(135deg, #4ade80, #22c55e); -webkit-background-clip: text; background-clip: text; }
+body.football .section-title { border-left-color: #22c55e; }
+body.football .score { background: #22c55e20; color: #4ade80; }
+body.football .conf h3, body.football .league h3, body.football .rank-list h3 { color: #22c55e; }
+body.football .nav-links a:hover, body.football .nav-links a.active { color: #22c55e; border-bottom-color: #22c55e; }
+body.football .dropbtn:hover { color: #22c55e; border-bottom-color: #22c55e; }
+body.football .dropdown-menu a:hover { background: rgba(74, 222, 128, 0.2); color: #4ade80; }
+
+/* Хоккей — синий */
+body.hockey .sport-header h1 { background: linear-gradient(135deg, #60a5fa, #3b82f6); -webkit-background-clip: text; background-clip: text; }
+body.hockey .section-title { border-left-color: #3b82f6; }
+body.hockey .score { background: #3b82f620; color: #60a5fa; }
+body.hockey .conf h3, body.hockey .league h3, body.hockey .rank-list h3 { color: #3b82f6; }
+body.hockey .nav-links a:hover, body.hockey .nav-links a.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+body.hockey .dropbtn:hover { color: #3b82f6; border-bottom-color: #3b82f6; }
+body.hockey .dropdown-menu a:hover { background: rgba(96, 165, 250, 0.2); color: #60a5fa; }
+
+/* Теннис — розовый */
+body.tennis .sport-header h1 { background: linear-gradient(135deg, #f472b6, #ec489a); -webkit-background-clip: text; background-clip: text; }
+body.tennis .section-title { border-left-color: #ec489a; }
+body.tennis .score { background: #ec489a20; color: #f472b6; }
+body.tennis .conf h3, body.tennis .league h3, body.tennis .rank-list h3 { color: #ec489a; }
+body.tennis .nav-links a:hover, body.tennis .nav-links a.active { color: #ec489a; border-bottom-color: #ec489a; }
+body.tennis .dropbtn:hover { color: #ec489a; border-bottom-color: #ec489a; }
+body.tennis .dropdown-menu a:hover { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
+
+/* Волейбол — жёлтый/оранжевый */
+body.volleyball .sport-header h1 { background: linear-gradient(135deg, #facc15, #eab308); -webkit-background-clip: text; background-clip: text; }
+body.volleyball .section-title { border-left-color: #eab308; }
+body.volleyball .score { background: #eab30820; color: #facc15; }
+body.volleyball .conf h3, body.volleyball .league h3, body.volleyball .rank-list h3 { color: #eab308; }
+body.volleyball .nav-links a:hover, body.volleyball .nav-links a.active { color: #eab308; border-bottom-color: #eab308; }
+body.volleyball .dropbtn:hover { color: #eab308; border-bottom-color: #eab308; }
+body.volleyball .dropdown-menu a:hover { background: rgba(234, 179, 8, 0.2); color: #facc15; }
+
+/* Бокс / MMA — красный */
+body.boxing .sport-header h1 { background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; background-clip: text; }
+body.boxing .section-title { border-left-color: #dc2626; }
+body.boxing .score { background: #dc262620; color: #ef4444; }
+body.boxing .conf h3, body.boxing .league h3, body.boxing .rank-list h3 { color: #dc2626; }
+body.boxing .nav-links a:hover, body.boxing .nav-links a.active { color: #dc2626; border-bottom-color: #dc2626; }
+body.boxing .dropbtn:hover { color: #dc2626; border-bottom-color: #dc2626; }
+body.boxing .dropdown-menu a:hover { background: rgba(220, 38, 38, 0.2); color: #ef4444; }
+
+/* Формула-1 — красный (другой оттенок) */
+body.f1 .sport-header h1 { background: linear-gradient(135deg, #e10600, #ff4d4d); -webkit-background-clip: text; background-clip: text; }
+body.f1 .section-title { border-left-color: #e10600; }
+body.f1 .score { background: #e1060020; color: #ff6b6b; }
+body.f1 .conf h3, body.f1 .league h3, body.f1 .rank-list h3 { color: #e10600; }
+body.f1 .nav-links a:hover, body.f1 .nav-links a.active { color: #e10600; border-bottom-color: #e10600; }
+body.f1 .dropbtn:hover { color: #e10600; border-bottom-color: #e10600; }
+body.f1 .dropdown-menu a:hover { background: rgba(225, 6, 0, 0.2); color: #ff4d4d; }
+
+/* Биатлон — голубой */
+body.biathlon .sport-header h1 { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; }
+body.biathlon .section-title { border-left-color: #06b6d4; }
+body.biathlon .score { background: #06b6d420; color: #3b82f6; }
+body.biathlon .conf h3, body.biathlon .league h3, body.biathlon .rank-list h3 { color: #06b6d4; }
+body.biathlon .nav-links a:hover, body.biathlon .nav-links a.active { color: #06b6d4; border-bottom-color: #06b6d4; }
+body.biathlon .dropbtn:hover { color: #06b6d4; border-bottom-color: #06b6d4; }
+body.biathlon .dropdown-menu a:hover { background: rgba(6, 182, 212, 0.2); color: #3b82f6; }
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .page {
+        padding: 1rem;
+    }
+    .news-item {
+        flex-direction: column;
+    }
+    .news-img {
+        width: 100%;
+        height: 120px;
+    }
+    .result-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        border-radius: 24px;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-container {
+        flex-direction: column;
+    }
+    .dropdown-menu {
+        left: 0;
+        right: auto;
+    }
+}
+

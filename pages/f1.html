@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Формула-1 — новости, результаты, таблица | SPORTBOX</title>
+    <link rel="stylesheet" href="./css/types-of-sports.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/ico/pogo.png">
+    <style>
+        /* акцентный цвет для F1 — красный */
+        .sport-header h1 {
+            background: linear-gradient(135deg, #e10600, #ff4d4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .section-title {
+            border-left-color: #e10600;
+        }
+
+        .score {
+            background: #e1060020;
+            color: #ff6b6b;
+        }
+
+        .conf h3,
+        .league h3,
+        .rank-list h3 {
+            color: #e10600;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #e10600;
+            border-bottom-color: #e10600;
+        }
+
+        .dropbtn:hover {
+            color: #e10600;
+            border-bottom-color: #e10600;
+        }
+    </style>
+</head>
+
+<body class="f1">
+    <div class="nav-menu">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="./img/ico/logo.png" alt="SPORTBOX"></a></div>
+            <div class="nav-links">
+
+                <a href="football.html">⚽ Футбол</a>
+                <a href="hockey.html">🏒 Хоккей</a>
+                <a href="basketball.html">🏀 Баскетбол</a>
+                <a href="tennis.html">⚾ Теннис</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Ещё <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="volleyball.html">🏐 Волейбол</a>
+                        <a href="boxing.html">🥊 Бокс / MMA</a>
+                        <a href="f1.html"  class="active">🏎️ Формула-1</a>
+                        <a href="biathlon.html">🎯 Биатлон</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="sport-header">
+            <h1>🏎️ ФОРМУЛА-1</h1>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📰 Последние новости</div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-img"><img src="https://via.placeholder.com/100x100?text=Verstappen"
+                            alt="Ферстаппен"></div>
+                    <div class="news-content">
+                        <div class="news-title">Ферстаппен выиграл Гран-при Австралии, лидируя от старта до финиша</div>
+                        <div class="news-meta">4 часа назад • F1 Official</div>
+                        <div class="news-desc">Пилот Red Bull одержал 4-ю победу в сезоне, укрепив лидерство в
+                            чемпионате.</div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-img"><img src="https://via.placeholder.com/100x100?text=Ferrari" alt="Феррари">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">«Феррари» представила обновлённый двигатель перед Гран-при Японии</div>
+                        <div class="news-meta">вчера • Autosport</div>
+                        <div class="news-desc">Итальянская команда надеется сократить отставание от Red Bull.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📋 Результаты Гран-при Австралии</div>
+            <div class="results-grid">
+                <div class="result-row"><span class="team-name">Макс Ферстаппен</span><span
+                        class="score">1:32:48</span><span class="team-name">Red Bull</span></div>
+                <div class="result-row"><span class="team-name">Ландо Норрис</span><span class="score">+5.2
+                        сек</span><span class="team-name">McLaren</span></div>
+                <div class="result-row"><span class="team-name">Шарль Леклер</span><span class="score">+12.7
+                        сек</span><span class="team-name">Ferrari</span></div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">🏆 Чемпионат пилотов</div>
+            <div class="conferences">
+                <div class="conf">
+                    <h3>Топ-5 пилотов</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Пилот</th>
+                                <th>Команда</th>
+                                <th>Очки</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Макс Ферстаппен</td>
+                                <td>Red Bull</td>
+                                <td>98</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ландо Норрис</td>
+                                <td>McLaren</td>
+                                <td>67</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Шарль Леклер</td>
+                                <td>Ferrari</td>
+                                <td>52</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Оскар Пиастри</td>
+                                <td>McLaren</td>
+                                <td>48</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Льюис Хэмилтон</td>
+                                <td>Ferrari</td>
+                                <td>41</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conf">
+                    <h3>🏆 Кубок конструкторов</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Команда</th>
+                                <th>Очки</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Red Bull Racing</td>
+                                <td>142</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>McLaren</td>
+                                <td>115</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ferrari</td>
+                                <td>93</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Mercedes</td>
+                                <td>67</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-note">🏆 Лидер: Макс Ферстаппен (Red Bull) — 98 очков</div>
+    </div>
+</body>
+
+</html>

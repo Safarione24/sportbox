@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биатлон — новости, результаты, таблицы | SPORTBOX</title>
+    <link rel="stylesheet" href="./css/types-of-sports.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/ico/pogo.png">
+    <style>
+        /* акцентный цвет для биатлона — сине-голубой */
+        .sport-header h1 { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; background-clip: text; }
+        .section-title { border-left-color: #3b82f6; }
+        .score { background: #3b82f620; color: #7ab3ff; }
+        .conf h3, .league h3, .rank-list h3 { color: #3b82f6; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; border-bottom-color: #3b82f6; }
+        .dropbtn:hover { color: #3b82f6; border-bottom-color: #3b82f6; }
+    </style>
+</head>
+<body class="biathlon">
+    <div class="nav-menu">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="./img/ico/logo.png" alt="SPORTBOX"></a></div>
+            <div class="nav-links">
+                
+                <a href="football.html">⚽ Футбол</a>
+                <a href="hockey.html">🏒 Хоккей</a>
+                <a href="basketball.html">🏀 Баскетбол</a>
+                <a href="tennis.html">⚾ Теннис</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Ещё <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="volleyball.html">🏐 Волейбол</a>
+                        <a href="boxing.html">🥊 Бокс / MMA</a>
+                        <a href="f1.html">🏎️ Формула-1</a>
+                        <a href="biathlon.html"  class="active">🎯 Биатлон</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="sport-header"><h1>🎯 БИАТЛОН</h1></div>
+
+        <div class="section-card">
+            <div class="section-title">📰 Последние новости</div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-img"><img src="https://via.placeholder.com/100x100?text=Boe" alt="Бё"></div>
+                    <div class="news-content">
+                        <div class="news-title">Йоханнес Бё выиграл масс-старт в Холменколлене, завершив сезон победой</div>
+                        <div class="news-meta">6 часов назад • IBU</div>
+                        <div class="news-desc">Норвежец завоевал Большой хрустальный глобус в пятый раз в карьере.</div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-img"><img src="./" alt="Россия"></div>
+                    <div class="news-content">
+                        <div class="news-title">Российские биатлонисты вернулись на международную арену в нейтральном статусе</div>
+                        <div class="news-meta">вчера • СБР</div>
+                        <div class="news-desc">Первые старты запланированы на летний чемпионат мира.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📋 Результаты масс-старта (Холменколлен)</div>
+            <div class="results-grid">
+                <div class="result-row"><span class="team-name">Йоханнес Бё</span><span class="score">38:12.4</span><span class="team-name">Норвегия</span></div>
+                <div class="result-row"><span class="team-name">Тарьей Бё</span><span class="score">+12.7</span><span class="team-name">Норвегия</span></div>
+                <div class="result-row"><span class="team-name">Стурла Легрейд</span><span class="score">+25.1</span><span class="team-name">Норвегия</span></div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">🏆 Итоговый зачёт Кубка мира 2025/26</div>
+            <div class="conferences">
+                <div class="conf">
+                    <h3>🎯 Мужчины</h3>
+                    <table class="standings-table">
+                        <thead>一头<th>#</th><th>Биатлонист</th><th>Страна</th><th>Очки</th> </thead>
+                        <tbody>
+                            <tr><td class="rank">1</td><td>Йоханнес Бё</td><td>🇳🇴</td><td>1125</td></tr>
+                            <tr><td class="rank">2</td><td>Стурла Легрейд</td><td>🇳🇴</td><td>987</td></tr>
+                            <tr><td class="rank">3</td><td>Эмильен Жаклен</td><td>🇫🇷</td><td>894</td></tr>
+                            <tr><td class="rank">4</td><td>Тарьей Бё</td><td>🇳🇴</td><td>821</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conf">
+                    <h3>🎯 Женщины</h3>
+                    <table class="standings-table">
+                        <thead>一头<th>#</th><th>Биатлонистка</th><th>Страна</th><th>Очки</th> </thead>
+                        <tbody>
+                            <tr><td class="rank">1</td><td>Жюстин Бреза-Буше</td><td>🇫🇷</td><td>1089</td></tr>
+                            <tr><td class="rank">2</td><td>Франциска Пройс</td><td>🇩🇪</td><td>956</td></tr>
+                            <tr><td class="rank">3</td><td>Эльвира Эберг</td><td>🇸🇪</td><td>912</td></tr>
+                            <tr><td class="rank">4</td><td>Лиза Виттоцци</td><td>🇮🇹</td><td>845</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-note">🏆 Большой хрустальный глобус: Йоханнес Бё (Норвегия) и Жюстин Бреза-Буше (Франция)</div>
+    </div>
+</body>
+</html>

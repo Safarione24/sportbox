@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баскетбол — новости, результаты, таблицы НБА | SPORTBOX</title>
+    <link rel="stylesheet" href="./css/types-of-sports.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/ico/pogo.png">
+    <!-- акцентный цвет для баскетбола (оранжевый) -->
+    <style>
+        .sport-header h1 {
+            background: linear-gradient(135deg, #FFB347, #FF8C00);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .section-title {
+            border-left-color: #FFB347;
+        }
+
+        .score {
+            background: #FFB34720;
+            color: #FFB347;
+        }
+
+        .conf h3,
+        .league h3,
+        .rank-list h3 {
+            color: #FFB347;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #FFB347;
+            border-bottom-color: #FFB347;
+        }
+
+        .dropbtn:hover {
+            color: #FFB347;
+            border-bottom-color: #FFB347;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 180, 71, 0.2);
+            color: #FFB347;
+        }
+    </style>
+</head>
+
+<body class="basketball">
+    <div class="nav-menu">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="./img/ico/logo.png" alt="SPORTBOX"></a></div>
+            <div class="nav-links">
+
+                <a href="football.html">⚽ Футбол</a>
+                <a href="hockey.html">🏒 Хоккей</a>
+                <a href="basketball.html"  class="active">🏀 Баскетбол</a>
+                <a href="tennis.html">⚾ Теннис</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Ещё <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="volleyball.html">🏐 Волейбол</a>
+                        <a href="boxing.html">🥊 Бокс / MMA</a>
+                        <a href="f1.html">🏎️ Формула-1</a>
+                        <a href="biathlon.html">🎯 Биатлон</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="sport-header">
+            <h1>🏀 БАСКЕТБОЛ</h1>
+        </div>
+
+        <!-- новости -->
+        <div class="section-card">
+            <div class="section-title">📰 Последние новости</div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-img"><img src="./img/news-photo/luka.jpg" alt="Дончич"></div>
+                    <div class="news-content">
+                        <div class="news-title">Лука Дончич выдал трипл-дабл в победе над «Денвером»</div>
+                        <div class="news-meta">2 часа назад • ESPN</div>
+                        <div class="news-desc">34 очка, 11 подборов и 12 передач.</div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-img"><img src="./img/news-photo/tatum.webp" alt="Селтикс"></div>
+                    <div class="news-content">
+                        <div class="news-title">«Бостон» оформил 10-ю победу подряд, Татум — MVP недели</div>
+                        <div class="news-meta">5 часов назад • NBA.com</div>
+                        <div class="news-desc">Разгромили «Майами» 125–98, лидерство на Востоке.</div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-img"><img src="./img/news-photo/okc.jpg" alt="Тандер"></div>
+                    <div class="news-content">
+                        <div class="news-title">«Оклахома-Сити» обменяла будущий пик на усиление под кольцо</div>
+                        <div class="news-meta">вчера • Shams Charania</div>
+                        <div class="news-desc">Тандер продолжают укреплять состав перед плей-офф.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- результаты -->
+        <div class="section-card">
+            <div class="section-title">🏀 Результаты (последние игры)</div>
+            <div class="results-grid">
+                <div class="result-row"><span class="team-name">Бостон Селтикс</span><span class="score">125 –
+                        98</span><span class="team-name">Майами Хит</span></div>
+                <div class="result-row"><span class="team-name">Лос-Анджелес Лейкерс</span><span class="score">117 –
+                        110</span><span class="team-name">Денвер Наггетс</span></div>
+                <div class="result-row"><span class="team-name">Оклахома-Сити Тандер</span><span class="score">108 –
+                        112</span><span class="team-name">Миннесота Тимбервулвз</span></div>
+                <div class="result-row"><span class="team-name">Голден Стэйт Уорриорз</span><span class="score">115 –
+                        103</span><span class="team-name">Финикс Санз</span></div>
+            </div>
+        </div>
+
+        <!-- таблицы с иконками -->
+        <div class="section-card">
+            <div class="section-title">📊 Регулярный чемпионат НБА 2025/26</div>
+            <div class="conferences">
+                <div class="conf">
+                    <h3>🔵 ВОСТОЧНАЯ КОНФЕРЕНЦИЯ</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Команда</th>
+                                <th>W</th>
+                                <th>L</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/boston.png"
+                                            alt="BOS"> Бостон Селтикс</div>
+                                </td>
+                                <td>52</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/cleveland.png"
+                                            alt="CLE"> Кливленд Кавальерс</div>
+                                </td>
+                                <td>48</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/new-york.png"
+                                            alt="NYK"> Нью-Йорк Никс</div>
+                                </td>
+                                <td>44</td>
+                                <td>22</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/milwaukee.png"
+                                            alt="MIL"> Милуоки Бакс</div>
+                                </td>
+                                <td>40</td>
+                                <td>26</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/indiana.png"
+                                            alt="IND"> Индиана Пэйсерс</div>
+                                </td>
+                                <td>38</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/detroit.png"
+                                            alt="DET"> Детройт Пистонс</div>
+                                </td>
+                                <td>35</td>
+                                <td>31</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="conf">
+                    <h3>🟠 ЗАПАДНАЯ КОНФЕРЕНЦИЯ</h3>
+                    <table class="standings-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Команда</th>
+                                <th>W</th>
+                                <th>L</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/okc.png"
+                                            alt="OKC"> Оклахома-Сити Тандер</div>
+                                </td>
+                                <td>54</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/denver.png"
+                                            alt="DEN"> Денвер Наггетс</div>
+                                </td>
+                                <td>47</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/lal.png"
+                                            alt="LAL"> Лос-Анджелес Лейкерс</div>
+                                </td>
+                                <td>45</td>
+                                <td>21</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/houston.png"
+                                            alt="HOU"> Хьюстон Рокетс</div>
+                                </td>
+                                <td>43</td>
+                                <td>23</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/memphis.png"
+                                            alt="MEM"> Мемфис Гриззлис</div>
+                                </td>
+                                <td>41</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <div class="team-cell"><img class="team-logo" src="./img/logo-teams/minnesota.png"
+                                            alt="MIN"> Миннесота Тимбервулвз</div>
+                                </td>
+                                <td>39</td>
+                                <td>27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- лучшие бомбардиры -->
+        <div class="section-card">
+            <div class="section-title">📈 Лучшие бомбардиры сезона</div>
+            <div class="rankings">
+                <div class="rank-list">
+                    <h3>🏀 Топ-5 по очкам</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Игрок</th>
+                                <th>Команда</th>
+                                <th>PPG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Шэй Гилджес-Александер</td>
+                                <td>OKC</td>
+                                <td>32.4</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Лука Дончич</td>
+                                <td>LAL</td>
+                                <td>31.1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Яннис Адетокунбо</td>
+                                <td>MIL</td>
+                                <td>30.2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Джейсон Тейтум</td>
+                                <td>BOS</td>
+                                <td>28.7</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Энтони Эдвардс</td>
+                                <td>MIN</td>
+                                <td>27.9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rank-list">
+                    <h3>🏀 Топ-5 по передачам</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Игрок</th>
+                                <th>Команда</th>
+                                <th>APG</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Тайриз Халибертон</td>
+                                <td>IND</td>
+                                <td>11.2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Лука Дончич</td>
+                                <td>LAL</td>
+                                <td>9.8</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Трэй Янг</td>
+                                <td>ATL</td>
+                                <td>9.5</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Никола Йокич</td>
+                                <td>DEN</td>
+                                <td>9.1</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Крис Пол</td>
+                                <td>SAS</td>
+                                <td>8.7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            🏆 Лидеры: Запад — Оклахома-Сити (54-12) | Восток — Бостон (52-14)<br>
+            🔥 MVP гонка: Шэй Гилджес-Александер опережает Луку Дончича
+        </div>
+    </div>
+
+</body>
+
+</html>

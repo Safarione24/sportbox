@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бокс / MMA — новости, результаты, рейтинги | SPORTBOX</title>
+    <link rel="stylesheet" href="./css/types-of-sports.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/ico/pogo.png">
+    <style>
+        /* переопределяем акцентный цвет для бокса */
+        .sport-header h1 {
+            background: linear-gradient(135deg, #dc2626, #ff6b35);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .section-title {
+            border-left-color: #dc2626;
+        }
+
+        .score {
+            background: #dc262620;
+            color: #ff8866;
+        }
+
+        .conf h3,
+        .league h3,
+        .rank-list h3 {
+            color: #dc2626;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+
+        .dropbtn:hover {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+    </style>
+</head>
+
+<body class="boxing">
+    <div class="nav-menu">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html"><img src="./img/ico/logo.png" alt="SPORTBOX"></a></div>
+            <div class="nav-links">
+
+                <a href="football.html">⚽ Футбол</a>
+                <a href="hockey.html">🏒 Хоккей</a>
+                <a href="basketball.html">🏀 Баскетбол</a>
+                <a href="tennis.html">⚾ Теннис</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Ещё <span class="dropdown-arrow">▼</span></button>
+                    <div class="dropdown-menu">
+                        <a href="volleyball.html" >🏐 Волейбол</a>
+                        <a href="boxing.html"  class="active">🥊 Бокс / MMA</a>
+                        <a href="f1.html">🏎️ Формула-1</a>
+                        <a href="biathlon.html">🎯 Биатлон</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="sport-header">
+            <h1>🥊 БОКС / MMA</h1>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📰 Последние новости</div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-img"><img src="https://via.placeholder.com/100x100?text=Usyk" alt="Усик"></div>
+                    <div class="news-content">
+                        <div class="news-title">Усик нокаутировал Дюбуа в 9-м раунде и защитил титулы</div>
+                        <div class="news-meta">3 часа назад • Boxing News</div>
+                        <div class="news-desc">Украинский чемпион провёл очередную успешную защиту поясов WBA, WBC, WBO.
+                        </div>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-img"><img src="https://via.placeholder.com/100x100?text=Makhachev" alt="Махачев">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">Махачев задушил Царукяна в главном бою UFC 300</div>
+                        <div class="news-meta">вчера • UFC</div>
+                        <div class="news-desc">Российский чемпион в третий раз защитил титул в лёгком весе.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">📋 Результаты последних боёв</div>
+            <div class="results-grid">
+                <div class="result-row"><span class="team-name">Александр Усик</span><span class="score">KO
+                        9</span><span class="team-name">Даниэль Дюбуа</span></div>
+                <div class="result-row"><span class="team-name">Ислам Махачев</span><span class="score">SUB
+                        3</span><span class="team-name">Арман Царукян</span></div>
+                <div class="result-row"><span class="team-name">Дмитрий Бивол</span><span class="score">UD
+                        12</span><span class="team-name">Артур Бетербиев</span></div>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <div class="section-title">🏆 Рейтинги P4P</div>
+            <div class="rankings">
+                <div class="rank-list">
+                    <h3>🥊 Бокс (P4P)</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Боксёр</th>
+                                <th>Вес</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="player-cell">Александр Усик</div>
+                                </td>
+                                <td>Тяжёлый</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="player-cell">Наоя Иноуэ</div>
+                                </td>
+                                <td>Легчайший</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="player-cell">Теренс Кроуфорд</div>
+                                </td>
+                                <td>Полусредний</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rank-list">
+                    <h3>🏆 MMA (P4P)</h3>
+                    <table class="rank-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Боец</th>
+                                <th>Вес</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <div class="player-cell">Ислам Махачев</div>
+                                </td>
+                                <td>Лёгкий</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <div class="player-cell">Джон Джонс</div>
+                                </td>
+                                <td>Тяжёлый</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <div class="player-cell">Алекс Перейра</div>
+                                </td>
+                                <td>Полутяжёлый</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-note">🥊 P4P лидеры: Усик (бокс) | Махачев (MMA)</div>
+    </div>
+</body>
+
+</html>
